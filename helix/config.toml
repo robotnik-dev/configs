@@ -1,4 +1,4 @@
-theme = "solarized-osaka"
+theme = "dark_plus"
 
 [keys.normal]
 "`" = "switch_to_uppercase"
