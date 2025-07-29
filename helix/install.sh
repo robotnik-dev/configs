@@ -6,5 +6,5 @@ sudo apt install helix
 
 # moving configs
 mkdir -p ~/.config
-cp ~/helix/.config/helix/ ~/.config/
-rm -r ~/helix
+cp ~/configs/helix/.config/helix/ ~/.config/
+rm -r ~/configs
