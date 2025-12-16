@@ -1,6 +1,6 @@
 theme = "dark_plus"
 
-[keys.normal."A-t"]
+[keys.normal."backspace"]
 T = [
   ":insert-output echo '#[cfg(test)]\nmod tests {\n\n\tuse super::*;\n\n\t#[test]\n\tfn test() {\n\t\ttodo!()\n\t}\n}'",
   "move_line_up",
@@ -46,10 +46,6 @@ t = [
 "A-w" = ":buffer-close"
 "A-/" = "repeat_last_motion"
 "A-&" = "remove_primary_selection"
-# format `dioxus` apps
-"A-f" = [":sh ~/.cargo/bin/dx fmt", ":reload-all"]
-# hot reload godot rust
-"A-h" = [":sh just build"]
 
 [keys.insert]
 "up" = "no_op"
@@ -71,7 +67,18 @@ enable = true
 max-wrap = 25
 
 [editor.statusline]
-left = ["mode", "spinner", "version-control", "file-name"]
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+left = ["mode", "spinner", "file-name", "version-control"]
+center = ["diagnostics", "workspace-diagnostics"]
+right = [
+  "selections",
+  "primary-selection-length",
+  "position",
+  "position-percentage",
+  "total-line-numbers",
+]
 
 [editor.auto-save.after-delay]
 enable = true
@@ -93,5 +100,26 @@ end-of-line-diagnostics = "hint"
 bufferline = "multiple"
 cursorline = true
 line-number = "relative"
+cursorcolumn = false
 rulers = [120]
 true-color = true
+auto-pairs = true
+
+[editor.indent-guides]
+render = true
+skip-levels = 0
+
+[editor.whitespace.render]
+space = "none"
+tab = "none"
+newline = "none"
+
+[editor.whitespace.characters]
+space = "·"
+nbsp = "⍽"
+tab = "→"
+newline = "⏎"
+tabpad = "·"  # Tabs will look like "→···" (depending on tab width)
+
+[editor.smart-tab]
+enable = true
