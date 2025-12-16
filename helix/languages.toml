@@ -1,8 +1,9 @@
 [language-server.rust-analyzer.config]
 check.command = "clippy"
-check.features = "all"
-check.all-targets = true
-cargo.features = "all"
+
+[[language]]
+name = "rust"
+auto-format = true
 
 [[language]]
 name = "nix"
