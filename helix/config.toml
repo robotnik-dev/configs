@@ -1,0 +1,97 @@
+theme = "dark_plus"
+
+[keys.normal."A-t"]
+T = [
+  ":insert-output echo '#[cfg(test)]\nmod tests {\n\n\tuse super::*;\n\n\t#[test]\n\tfn test() {\n\t\ttodo!()\n\t}\n}'",
+  "move_line_up",
+  "move_line_up",
+  "move_line_up",
+  "move_next_word_start",
+  "move_next_word_start",
+]
+t = [
+  ":insert-output echo '#[test]\n\tfn test() {\n\t\ttodo!()\n\t}'",
+  "move_line_up",
+  "move_line_up",
+  "move_next_word_start",
+  "move_next_word_start",
+]
+
+[keys.normal]
+"up" = "no_op"
+"down" = "no_op"
+"left" = "no_op"
+"right" = "no_op"
+"`" = "switch_to_uppercase"
+"´" = "switch_to_lowercase"
+"A-j" = [
+  "extend_to_line_bounds",
+  "delete_selection",
+  "paste_after",
+  "select_mode",
+  "goto_line_start",
+  "normal_mode",
+]
+"A-k" = [
+  "extend_to_line_bounds",
+  "delete_selection",
+  "move_line_up",
+  "paste_before",
+  "flip_selections",
+]
+"A-x" = "extend_to_line_bounds"
+"X" = "select_line_above"
+"A-," = "goto_previous_buffer"
+"A-." = "goto_next_buffer"
+"A-w" = ":buffer-close"
+"A-/" = "repeat_last_motion"
+"A-&" = "remove_primary_selection"
+# format `dioxus` apps
+"A-f" = [":sh ~/.cargo/bin/dx fmt", ":reload-all"]
+# hot reload godot rust
+"A-h" = [":sh just build"]
+
+[keys.insert]
+"up" = "no_op"
+"down" = "no_op"
+"left" = "no_op"
+"right" = "no_op"
+
+[keys.select]
+"A-x" = "extend_to_line_bounds"
+"X" = "select_line_above"
+
+[editor.cursor-shape]
+normal = "block"
+insert = "bar"
+select = "underline"
+
+[editor.soft-wrap]
+enable = true
+max-wrap = 25
+
+[editor.statusline]
+left = ["mode", "spinner", "version-control", "file-name"]
+
+[editor.auto-save.after-delay]
+enable = true
+timeout = 1000
+
+[editor.file-picker]
+hidden = false
+
+[editor.lsp]
+display-inlay-hints = true
+display-messages = true
+
+[editor.inline-diagnostics]
+cursor-line = "error"
+other-lines = "disable"
+
+[editor]
+end-of-line-diagnostics = "hint"
+bufferline = "multiple"
+cursorline = true
+line-number = "relative"
+rulers = [120]
+true-color = true

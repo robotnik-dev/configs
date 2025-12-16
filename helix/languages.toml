@@ -1,0 +1,35 @@
+[language-server.rust-analyzer.config]
+check.command = "clippy"
+check.features = "all"
+check.all-targets = true
+cargo.features = "all"
+
+[[language]]
+name = "nix"
+auto-format = true
+formatter = { command = "nixfmt" }
+
+[[language]]
+name = "toml"
+auto-format = true
+formatter = { command = "taplo", args = ["fmt", "-"] }
+
+[[language]]
+name = "markdown"
+auto-format = true
+formatter = { command = "deno", args = ["fmt", "-", "--ext", "md"] }
+
+[[language]]
+name = "json"
+auto-format = true
+formatter = { command = "deno", args = ["fmt", "-", "--ext", "json"] }
+
+[[language]]
+name = "yaml"
+auto-format = true
+formatter = { command = "prettier", args = ["--parser", "yaml"] }
+
+[[language]]
+name = "css"
+auto-format = true
+formatter = { command = "prettier", args = ["--parser", "css"] }
