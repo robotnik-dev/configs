@@ -1,5 +1,14 @@
-[language-server.rust-analyzer.config]
-check.command = "clippy"
+[language-server.rust-analyzer.config.check]
+overrideCommand = [
+  "bevy_lint",
+  "--workspace",
+  "--all-targets",
+  "--message-format=json-diagnostic-rendered-ansi",
+]
+
+
+[language-server.rust-analyzer.config.cargo]
+features = "all"
 
 [[language]]
 name = "rust"
