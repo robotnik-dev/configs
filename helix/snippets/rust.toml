@@ -1,0 +1,58 @@
+[[snippets]]
+prefix = "plugin"
+scope = ["rust"]
+body = '''use bevy::prelude::*;
+
+pub(super) fn plugin(app: &mut App) {
+	$1
+}'''
+description = "Bevy: New top-level function Plugin"
+
+[[snippets]]
+prefix = "component"
+scope = ["rust"]
+body = '''#[derive(Component, Reflect, Debug)]
+#[reflect(Component)]
+struct $1;'''
+description = "Bevy: New Component"
+
+[[snippets]]
+prefix = "resource"
+scope = ["rust"]
+body = '''#[derive(Resource, Reflect, Debug, Default)]
+#[reflect(Resource)]
+struct $1;'''
+description = "Bevy: New Resource"
+
+[[snippets]]
+prefix = "event"
+scope = ["rust"]
+body = '''#[derive(Event, Debug)]
+struct $1;'''
+description = "Bevy: New Event"
+
+[[snippets]]
+prefix = "systemset"
+scope = ["rust"]
+body = '''#[derive(SystemSet, Copy, Clone, Eq, PartialEq, Hash, Debug)]
+enum $1 {
+	$0
+}'''
+description = "Bevy: New SystemSet"
+
+[[snippets]]
+prefix = "schedule"
+scope = ["rust"]
+body = '''#[derive(ScheduleLabel, Copy, Clone, Eq, PartialEq, Hash, Debug)]
+struct $1;'''
+description = "Bevy: New Schedule"
+
+[[snippets]]
+prefix = "states"
+scope = ["rust"]
+body = '''#[derive(States, Copy, Clone, Eq, PartialEq, Hash, Debug, Default)]
+enum $1 {
+	#[default]
+	$0
+}'''
+description = "Bevy: New States"

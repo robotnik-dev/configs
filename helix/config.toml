@@ -104,6 +104,7 @@ cursorcolumn = false
 rulers = [120]
 true-color = true
 auto-pairs = true
+completion-trigger-len = 2
 
 [editor.indent-guides]
 render = true
