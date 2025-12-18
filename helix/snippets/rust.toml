@@ -56,3 +56,26 @@ enum $1 {
 	$0
 }'''
 description = "Bevy: New States"
+
+[[snippets]]
+prefix = "testmod"
+scope = ["rust"]
+body = '''#[cfg(test)]
+mod tests {
+	use super::*;
+
+	#[test]
+	fn test_$1() {
+		$0
+	}
+}'''
+description = "Rust: Test module with test function"
+
+[[snippets]]
+prefix = "test"
+scope = ["rust"]
+body = '''#[test]
+fn test_$1() {
+	$0
+}'''
+description = "Rust: Test function"
