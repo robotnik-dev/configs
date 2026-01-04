@@ -13,7 +13,7 @@ prefix = "component"
 scope = ["rust"]
 body = '''#[derive(Component, Reflect, Debug)]
 #[reflect(Component)]
-struct $1;'''
+pub struct $1;'''
 description = "Bevy: New Component"
 
 [[snippets]]
@@ -21,21 +21,32 @@ prefix = "resource"
 scope = ["rust"]
 body = '''#[derive(Resource, Reflect, Debug, Default)]
 #[reflect(Resource)]
-struct $1;'''
+pub struct $1;'''
 description = "Bevy: New Resource"
+
+[[snippets]]
+prefix = "assets"
+scope = ["rust"]
+body = '''#[derive(Resource, Asset, Clone, Reflect)]
+#[reflect(Resource)]
+pub struct $1 {
+	#[dependency]
+	$0
+}'''
+description = "Bevy: New Assets Resource"
 
 [[snippets]]
 prefix = "event"
 scope = ["rust"]
 body = '''#[derive(Event, Debug)]
-struct $1;'''
+pub struct $1;'''
 description = "Bevy: New Event"
 
 [[snippets]]
 prefix = "systemset"
 scope = ["rust"]
 body = '''#[derive(SystemSet, Copy, Clone, Eq, PartialEq, Hash, Debug)]
-enum $1 {
+pub enum $1 {
 	$0
 }'''
 description = "Bevy: New SystemSet"
@@ -44,14 +55,14 @@ description = "Bevy: New SystemSet"
 prefix = "schedule"
 scope = ["rust"]
 body = '''#[derive(ScheduleLabel, Copy, Clone, Eq, PartialEq, Hash, Debug)]
-struct $1;'''
+pub struct $1;'''
 description = "Bevy: New Schedule"
 
 [[snippets]]
 prefix = "states"
 scope = ["rust"]
 body = '''#[derive(States, Copy, Clone, Eq, PartialEq, Hash, Debug, Default)]
-enum $1 {
+pub enum $1 {
 	#[default]
 	$0
 }'''
