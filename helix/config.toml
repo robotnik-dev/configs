@@ -46,16 +46,24 @@ t = [
 "A-w" = ":buffer-close"
 "A-/" = "repeat_last_motion"
 "A-&" = "remove_primary_selection"
+V = ["goto_first_nonwhitespace", "extend_to_line_end"]
+D = ["ensure_selections_forward", "extend_to_line_end"]
+x = "extend_line"
+F = "goto_word"
 
 [keys.insert]
 "up" = "no_op"
 "down" = "no_op"
 "left" = "no_op"
 "right" = "no_op"
+"A-;" = "normal_mode"
 
 [keys.select]
 "A-x" = "extend_to_line_bounds"
 "X" = "select_line_above"
+";" = ["collapse_selection", "normal_mode"]
+x = "extend_line"
+V = "extend_to_line_end"
 
 [editor.cursor-shape]
 normal = "block"
