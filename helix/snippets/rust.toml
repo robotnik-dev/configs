@@ -17,6 +17,14 @@ pub struct $1;'''
 description = "Bevy: New Component"
 
 [[snippets]]
+prefix = "entity"
+scope = ["rust"]
+body = '''pub fn $1($0) -> impl Bundle {
+  
+}'''
+description = "Bevy: New Entity function"
+
+[[snippets]]
 prefix = "resource"
 scope = ["rust"]
 body = '''#[derive(Resource, Reflect, Debug, Default)]
@@ -32,6 +40,16 @@ body = '''#[derive(Resource, Asset, Clone, Reflect)]
 pub struct $1 {
 	#[dependency]
 	$0
+}
+
+impl FromWorld for $1 {
+    fn from_world(world: &mut World) -> Self {
+        let assets = world.resource::<AssetServer>();
+
+        Self {
+				  
+        }
+    }
 }'''
 description = "Bevy: New Assets Resource"
 
