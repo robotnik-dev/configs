@@ -74,6 +74,11 @@ auto-format = false
 language-servers = ["scls"]
 
 # harper spellcheck configs
+[language-server.harper-ls.config.harper-ls]
+diagnosticSeverity = "error"
+
 [language-server.harper-ls.config.harper-ls.linters]
-SpellCheck = false
+SpellCheck = true
 SentenceCapitalization = false
+WrongQuotes = true
+LongSentences = false
