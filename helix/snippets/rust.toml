@@ -17,7 +17,7 @@ pub struct $1;'''
 description = "Bevy: New Component"
 
 [[snippets]]
-prefix = "entity"
+prefix = "bundle"
 scope = ["rust"]
 body = '''pub fn $1($0) -> impl Bundle {
   
@@ -59,6 +59,13 @@ scope = ["rust"]
 body = '''#[derive(Event, Debug)]
 pub struct $1;'''
 description = "Bevy: New Event"
+
+[[snippets]]
+prefix = "message"
+scope = ["rust"]
+body = '''#[derive(Message, Debug)]
+pub struct $1;'''
+description = "Bevy: New Message"
 
 [[snippets]]
 prefix = "systemset"
