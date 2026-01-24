@@ -11,11 +11,6 @@ feature_unicode_input = false        # enable "unicode input"
 feature_paths = false                # enable path completion
 feature_citations = false            # enable citation completion (only on `citation` feature enabled)
 
-# new language server for spellcheck
-[language-server.harper-ls]
-command = "harper-ls"
-args = ["--stdio"]
-
 # write logs to /tmp/completion.log
 [language-server.scls.environment]
 RUST_LOG = "info,simple-completion-language-server=info"
@@ -30,7 +25,7 @@ features = "all"
 [[language]]
 name = "rust"
 auto-format = true
-language-servers = ["rust-analyzer", "scls", "harper-ls"]
+language-servers = ["rust-analyzer", "scls"]
 
 [[language]]
 name = "nix"
@@ -72,13 +67,3 @@ shebangs = []
 roots = []
 auto-format = false
 language-servers = ["scls"]
-
-# harper spellcheck configs
-[language-server.harper-ls.config.harper-ls]
-diagnosticSeverity = "error"
-
-[language-server.harper-ls.config.harper-ls.linters]
-SpellCheck = true
-SentenceCapitalization = false
-WrongQuotes = true
-LongSentences = false
