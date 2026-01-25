@@ -41,7 +41,7 @@ formatter = { command = "taplo", args = ["fmt", "-"] }
 name = "markdown"
 auto-format = true
 formatter = { command = "deno", args = ["fmt", "-", "--ext", "md"] }
-language-servers = ["marksman", "harper-ls"]
+language-servers = ["marksman"]
 
 [[language]]
 name = "json"
