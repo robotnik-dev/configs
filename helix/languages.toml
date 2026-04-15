@@ -16,6 +16,10 @@ feature_citations = false            # enable citation completion (only on `cita
 RUST_LOG = "info,simple-completion-language-server=info"
 LOG_FILE = "/tmp/completion.log"
 
+[language-server.godot]
+command = "nc"
+args = ["127.0.0.1", "6005"]
+
 [language-server.rust-analyzer.config.check]
 command = "clippy"
 
@@ -26,6 +30,11 @@ features = "all"
 name = "rust"
 auto-format = true
 language-servers = ["rust-analyzer", "scls"]
+
+[[language]]
+name = "gdscript"
+auto-format = true
+language-servers = ["godot", "scls"]
 
 [[language]]
 name = "nix"
