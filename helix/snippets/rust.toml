@@ -19,8 +19,9 @@ description = "Bevy: New Component"
 [[snippets]]
 prefix = "bundle"
 scope = ["rust"]
-body = '''pub fn $1($0) -> impl Bundle {
-  
+body = '''#[derive(Bundle, Reflect, Debug)]
+pub struct $1 {
+	
 }'''
 description = "Bevy: New Entity function"
 

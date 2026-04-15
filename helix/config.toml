@@ -1,22 +1,5 @@
 theme = "dark_plus"
 
-[keys.normal."backspace"]
-T = [
-  ":insert-output echo '#[cfg(test)]\nmod tests {\n\n\tuse super::*;\n\n\t#[test]\n\tfn test() {\n\t\ttodo!()\n\t}\n}'",
-  "move_line_up",
-  "move_line_up",
-  "move_line_up",
-  "move_next_word_start",
-  "move_next_word_start",
-]
-t = [
-  ":insert-output echo '#[test]\n\tfn test() {\n\t\ttodo!()\n\t}'",
-  "move_line_up",
-  "move_line_up",
-  "move_next_word_start",
-  "move_next_word_start",
-]
-
 [keys.normal]
 "up" = "no_op"
 "down" = "no_op"
@@ -24,7 +7,7 @@ t = [
 "right" = "no_op"
 "`" = "switch_to_uppercase"
 "´" = "switch_to_lowercase"
-"A-j" = [
+"C-j" = [
   "extend_to_line_bounds",
   "delete_selection",
   "paste_after",
@@ -32,7 +15,7 @@ t = [
   "goto_line_start",
   "normal_mode",
 ]
-"A-k" = [
+"C-k" = [
   "extend_to_line_bounds",
   "delete_selection",
   "move_line_up",
