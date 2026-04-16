@@ -7,6 +7,32 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "diff_view_style": "unified",
+  "autosave": "off",
+  "inlay_hints": {
+    "show_background": true,
+    "show_other_hints": true,
+    "show_parameter_hints": true,
+    "show_type_hints": true,
+    "show_value_hints": true,
+    "enabled": true
+  },
+  "diagnostics": {
+    "inline": {
+      "enabled": true
+    }
+  },
+  "git": {
+    "inline_blame": {
+      "enabled": false
+    }
+  },
+  "terminal": {
+    "shell": {
+      "program": "/bin/zsh"
+    },
+    "button": true
+  },
   "which_key": {
     "delay_ms": 10,
     "enabled": true,
@@ -24,6 +50,15 @@
     },
   },
   "languages": {
+    "Markdown": {
+      "format_on_save": "on",
+      "formatter": {
+        "external": {
+          "command": "deno",
+          "arguments": ["fmt", "-", "--ext", "md"],
+        },
+      },
+    },
     "Rust": {
       "enable_language_server": true,
       "prettier": {

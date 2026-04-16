@@ -7,6 +7,26 @@
 // from the command palette.
 [
   {
+    "context": "Editor && showing_completions",
+    "bindings": {
+      "tab": "editor::ContextMenuNext",
+      "shift-tab": "editor::ContextMenuPrevious",
+    },
+  },
+  // {
+  //   "context": "Editor && (showing_code_actions || showing_completions)",
+  //   "bindings": {
+  //     "tab": "editor::ContextMenuNext",
+  //     "shift-tab": "editor::ContextMenuPrevious",
+  //   },
+  // },
+  // {
+  //   "context": "Picker > Editor",
+  //   "unbind": {
+  //     "tab": "picker::ConfirmCompletion",
+  //   },
+  // },
+  {
     "context": "Workspace",
     "bindings": {
       // "shift shift": "file_finder::Toggle"
@@ -49,73 +69,144 @@
   {
     "context": "Pane",
     "bindings": {
-      "alt-.": "pane::ActivateNextItem"
-    }
+      "alt-.": "pane::ActivateNextItem",
+    },
   },
   {
     "context": "Pane",
     "unbind": {
-      "ctrl-pagedown": "pane::ActivateNextItem"
-    }
+      "ctrl-pagedown": "pane::ActivateNextItem",
+    },
   },
   {
     "context": "(vim_mode == normal || vim_mode == helix_normal) && !menu",
     "bindings": {
-      "alt-.": "pane::ActivateNextItem"
-    }
+      "alt-.": "pane::ActivateNextItem",
+    },
   },
   {
     "context": "(vim_mode == normal || vim_mode == helix_normal) && !menu",
     "unbind": {
-      "ctrl-pagedown": "pane::ActivateNextItem"
-    }
+      "ctrl-pagedown": "pane::ActivateNextItem",
+    },
   },
   {
     "context": "vim_mode == helix_select",
     "bindings": {
-      "alt-.": "pane::ActivateNextItem"
-    }
+      "alt-.": "pane::ActivateNextItem",
+    },
   },
   {
     "context": "vim_mode == helix_select",
     "unbind": {
-      "ctrl-pagedown": "pane::ActivateNextItem"
-    }
+      "ctrl-pagedown": "pane::ActivateNextItem",
+    },
   },
   {
     "context": "Pane",
     "bindings": {
-      "alt-,": "pane::ActivatePreviousItem"
-    }
+      "alt-,": "pane::ActivatePreviousItem",
+    },
   },
   {
     "context": "Pane",
     "unbind": {
-      "ctrl-pageup": "pane::ActivatePreviousItem"
-    }
+      "ctrl-pageup": "pane::ActivatePreviousItem",
+    },
   },
   {
     "context": "(vim_mode == normal || vim_mode == helix_normal) && !menu",
     "bindings": {
-      "alt-,": "pane::ActivatePreviousItem"
-    }
+      "alt-,": "pane::ActivatePreviousItem",
+    },
   },
   {
     "context": "(vim_mode == normal || vim_mode == helix_normal) && !menu",
     "unbind": {
-      "ctrl-pageup": "pane::ActivatePreviousItem"
-    }
+      "ctrl-pageup": "pane::ActivatePreviousItem",
+    },
   },
   {
     "context": "vim_mode == helix_select",
     "bindings": {
-      "alt-,": "pane::ActivatePreviousItem"
-    }
+      "alt-,": "pane::ActivatePreviousItem",
+    },
   },
   {
     "context": "vim_mode == helix_select",
     "unbind": {
-      "ctrl-pageup": "pane::ActivatePreviousItem"
+      "ctrl-pageup": "pane::ActivatePreviousItem",
+    },
+  },
+  {
+    "bindings": {
+      "alt-q": "terminal_panel::ToggleFocus",
+    },
+  },
+  {
+    "context": "Editor && (showing_code_actions || showing_completions)",
+    "unbind": {
+      "down": "editor::ContextMenuNext",
+    },
+  },
+  {
+    "context": "Editor && (showing_code_actions || showing_completions)",
+    "unbind": {
+      "down": "editor::ContextMenuNext",
+    },
+  },
+  {
+    "context": "Picker > Editor",
+    "unbind": {
+      "tab": "picker::ConfirmCompletion",
+    },
+  },
+  {
+    "context": "Picker > Editor",
+    "unbind": {
+      "tab": "picker::ConfirmCompletion",
+    },
+  },
+  {
+    "context": "Picker > Editor",
+    "unbind": {
+      "tab": "picker::ConfirmCompletion",
+    },
+  },
+  {
+    "context": "Picker > Editor",
+    "unbind": {
+      "tab": "picker::ConfirmCompletion",
+    },
+  },
+  {
+    "context": "Editor && showing_completions",
+    "unbind": {
+      "tab": "editor::ComposeCompletion",
+    },
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "alt-k": "editor::MoveLineUp"
+    }
+  },
+  {
+    "context": "Editor",
+    "unbind": {
+      "alt-up": "editor::MoveLineUp"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "alt-j": "editor::MoveLineDown"
+    }
+  },
+  {
+    "context": "Editor",
+    "unbind": {
+      "alt-down": "editor::MoveLineDown"
     }
   }
 ]
