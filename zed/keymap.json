@@ -1,0 +1,121 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      // "shift shift": "file_finder::Toggle"
+    },
+  },
+  {
+    "context": "(VimControl && !menu)",
+    "bindings": {
+      "space": null,
+    },
+  },
+  {
+    "context": "Editor && (vim_mode == helix_normal) || (vim_mode == helix_select)",
+    "bindings": {
+      "ctrl-b": "workspace::ToggleLeftDock",
+    },
+  },
+  {
+    "context": "Pane",
+    "bindings": {
+      "alt-w": [
+        "pane::CloseActiveItem",
+        {
+          "close_pinned": false,
+        },
+      ],
+    },
+  },
+  {
+    "context": "Pane",
+    "unbind": {
+      "ctrl-w": [
+        "pane::CloseActiveItem",
+        {
+          "close_pinned": false,
+        },
+      ],
+    },
+  },
+  {
+    "context": "Pane",
+    "bindings": {
+      "alt-.": "pane::ActivateNextItem"
+    }
+  },
+  {
+    "context": "Pane",
+    "unbind": {
+      "ctrl-pagedown": "pane::ActivateNextItem"
+    }
+  },
+  {
+    "context": "(vim_mode == normal || vim_mode == helix_normal) && !menu",
+    "bindings": {
+      "alt-.": "pane::ActivateNextItem"
+    }
+  },
+  {
+    "context": "(vim_mode == normal || vim_mode == helix_normal) && !menu",
+    "unbind": {
+      "ctrl-pagedown": "pane::ActivateNextItem"
+    }
+  },
+  {
+    "context": "vim_mode == helix_select",
+    "bindings": {
+      "alt-.": "pane::ActivateNextItem"
+    }
+  },
+  {
+    "context": "vim_mode == helix_select",
+    "unbind": {
+      "ctrl-pagedown": "pane::ActivateNextItem"
+    }
+  },
+  {
+    "context": "Pane",
+    "bindings": {
+      "alt-,": "pane::ActivatePreviousItem"
+    }
+  },
+  {
+    "context": "Pane",
+    "unbind": {
+      "ctrl-pageup": "pane::ActivatePreviousItem"
+    }
+  },
+  {
+    "context": "(vim_mode == normal || vim_mode == helix_normal) && !menu",
+    "bindings": {
+      "alt-,": "pane::ActivatePreviousItem"
+    }
+  },
+  {
+    "context": "(vim_mode == normal || vim_mode == helix_normal) && !menu",
+    "unbind": {
+      "ctrl-pageup": "pane::ActivatePreviousItem"
+    }
+  },
+  {
+    "context": "vim_mode == helix_select",
+    "bindings": {
+      "alt-,": "pane::ActivatePreviousItem"
+    }
+  },
+  {
+    "context": "vim_mode == helix_select",
+    "unbind": {
+      "ctrl-pageup": "pane::ActivatePreviousItem"
+    }
+  }
+]
