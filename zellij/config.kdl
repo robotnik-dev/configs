@@ -156,6 +156,8 @@ keybinds clear-defaults=true {
         }
     }
     shared_among "normal" "locked" {
+        bind "Alt w" { CloseFocus; SwitchToMode "locked"; }
+        bind "Ctrl f" { ToggleFocusFullscreen; }
         bind "Alt left" { MoveFocusOrTab "left"; }
         bind "Alt down" { MoveFocus "down"; }
         bind "Alt up" { MoveFocus "up"; }
