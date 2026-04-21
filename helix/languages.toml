@@ -32,6 +32,11 @@ auto-format = true
 language-servers = ["rust-analyzer", "scls"]
 
 [[language]]
+name = "python"
+auto-format = true
+formatter = { command = "ruff", args = ["format", "-"] }
+
+[[language]]
 name = "gdscript"
 auto-format = true
 language-servers = ["godot", "scls"]
@@ -49,7 +54,7 @@ formatter = { command = "taplo", args = ["fmt", "-"] }
 [[language]]
 name = "markdown"
 auto-format = true
-formatter = { command = "deno", args = ["fmt", "-", "--ext", "md"] }
+formatter = { command = "prettier", args = ["--parser", "markdown"] }
 language-servers = ["marksman"]
 
 [[language]]
