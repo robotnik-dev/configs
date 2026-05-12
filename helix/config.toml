@@ -33,6 +33,13 @@ V = ["goto_first_nonwhitespace", "extend_to_line_end"]
 D = ["ensure_selections_forward", "extend_to_line_end"]
 x = "extend_line"
 G = "goto_word"
+A-g = [
+  ":new",
+  ":insert-output lazygit",
+  ":buffer-close!",
+  ":redraw",
+  ":reload-all",
+]
 
 [keys.insert]
 "up" = "no_op"
