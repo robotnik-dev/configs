@@ -60,7 +60,7 @@ language-servers = ["marksman"]
 [[language]]
 name = "json"
 auto-format = true
-formatter = { command = "deno", args = ["fmt", "-", "--ext", "json"] }
+formatter = { command = "prettier", args = ["--parser", "json"] }
 
 [[language]]
 name = "yaml"
