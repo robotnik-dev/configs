@@ -40,6 +40,8 @@ A-g = [
   ":redraw",
   ":reload-all",
 ]
+S-A-n = "select_next_sibling"
+S-A-p = "select_prev_sibling"
 
 [keys.insert]
 "up" = "no_op"
