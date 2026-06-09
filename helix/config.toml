@@ -33,15 +33,17 @@ V = ["goto_first_nonwhitespace", "extend_to_line_end"]
 D = ["ensure_selections_forward", "extend_to_line_end"]
 x = "extend_line"
 G = "goto_word"
-A-g = [
+S-A-n = "select_next_sibling"
+S-A-p = "select_prev_sibling"
+
+[keys.normal.backspace]
+g = [
   ":new",
   ":insert-output lazygit",
   ":buffer-close!",
   ":redraw",
   ":reload-all",
 ]
-S-A-n = "select_next_sibling"
-S-A-p = "select_prev_sibling"
 
 [keys.insert]
 "up" = "no_op"
