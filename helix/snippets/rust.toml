@@ -1,5 +1,81 @@
 [[snippets]]
-prefix = "plugin"
+prefix = "gd-class"
+scope = ["rust"]
+body = '''
+#[derive(GodotClass)]
+#[class(init, base=$2)]
+struct $1 {
+    base: Base<$2>,
+}
+
+#[godot_api]
+impl I$2 for $1 {
+    fn ready(&mut self) {
+		  // called when the node is ready
+    }
+}
+'''
+description = "Godot: New Godot class"
+
+[[snippets]]
+prefix = "gd-init"
+scope = ["rust"]
+body = '''
+fn init(base: Base<$1>) -> Self {
+	// Intantiate the object
+	$2
+}
+'''
+description = "Godot: init function"
+
+[[snippets]]
+prefix = "gd-ready"
+scope = ["rust"]
+body = '''
+fn ready(&mut self) {
+	// called when the node is ready
+	$1
+}
+'''
+description = "Godot: ready function"
+
+[[snippets]]
+prefix = "gd-process"
+scope = ["rust"]
+body = '''
+fn process(&mut self, delta: f64) {
+	// every frame
+	$1
+}
+'''
+description = "Godot: process function"
+
+[[snippets]]
+prefix = "gd-physics-process"
+scope = ["rust"]
+body = '''
+fn physics_process(&mut self, delta: f64) {
+	// every physics frame
+	$1
+}
+'''
+description = "Godot: physics-process function"
+
+[[snippets]]
+prefix = "gd-enum"
+scope = ["rust"]
+body = '''
+#[derive(GodotConvert, Var, Export, Debug, Default, Clone)]
+#[godot(via = GString)]
+pub enum $1 {
+    #[default]
+    $2
+}
+'''
+description = "Godot: New enum"
+
+[[snippets]]
+prefix = "bevy-plugin"
 scope = ["rust"]
 body = '''use bevy::prelude::*;
 
@@ -9,7 +85,7 @@ pub(super) fn plugin(app: &mut App) {
 description = "Bevy: New top-level function Plugin"
 
 [[snippets]]
-prefix = "component"
+prefix = "bevy-component"
 scope = ["rust"]
 body = '''#[derive(Component, Reflect, Debug)]
 #[reflect(Component)]
@@ -17,7 +93,7 @@ pub struct $1;'''
 description = "Bevy: New Component"
 
 [[snippets]]
-prefix = "bundle"
+prefix = "bevy-bundle"
 scope = ["rust"]
 body = '''#[derive(Bundle, Reflect, Debug)]
 pub struct $1 {
@@ -26,7 +102,7 @@ pub struct $1 {
 description = "Bevy: New Entity function"
 
 [[snippets]]
-prefix = "resource"
+prefix = "bevy-resource"
 scope = ["rust"]
 body = '''#[derive(Resource, Reflect, Debug, Default)]
 #[reflect(Resource)]
@@ -34,7 +110,7 @@ pub struct $1;'''
 description = "Bevy: New Resource"
 
 [[snippets]]
-prefix = "assets"
+prefix = "bevy-assets"
 scope = ["rust"]
 body = '''#[derive(Resource, Asset, Clone, Reflect)]
 #[reflect(Resource)]
@@ -55,21 +131,21 @@ impl FromWorld for $1 {
 description = "Bevy: New Assets Resource"
 
 [[snippets]]
-prefix = "event"
+prefix = "bevy-event"
 scope = ["rust"]
 body = '''#[derive(Event, Debug)]
 pub struct $1;'''
 description = "Bevy: New Event"
 
 [[snippets]]
-prefix = "message"
+prefix = "bevy-message"
 scope = ["rust"]
 body = '''#[derive(Message, Debug)]
 pub struct $1;'''
 description = "Bevy: New Message"
 
 [[snippets]]
-prefix = "systemset"
+prefix = "bevy-systemset"
 scope = ["rust"]
 body = '''#[derive(SystemSet, Copy, Clone, Eq, PartialEq, Hash, Debug)]
 pub enum $1 {
@@ -78,14 +154,14 @@ pub enum $1 {
 description = "Bevy: New SystemSet"
 
 [[snippets]]
-prefix = "schedule"
+prefix = "bevy-schedule"
 scope = ["rust"]
 body = '''#[derive(ScheduleLabel, Copy, Clone, Eq, PartialEq, Hash, Debug)]
 pub struct $1;'''
 description = "Bevy: New Schedule"
 
 [[snippets]]
-prefix = "states"
+prefix = "bevy-states"
 scope = ["rust"]
 body = '''#[derive(States, Copy, Clone, Eq, PartialEq, Hash, Debug, Default)]
 pub enum $1 {

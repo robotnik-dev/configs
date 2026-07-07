@@ -39,6 +39,7 @@ formatter = { command = "ruff", args = ["format", "-"] }
 [[language]]
 name = "gdscript"
 auto-format = true
+formatter = { command = "gdformat", args = ["-"] }
 language-servers = ["godot", "scls"]
 
 [[language]]
