@@ -4,7 +4,7 @@ scope = ["rust"]
 body = '''
 #[derive(GodotClass)]
 #[class(init, base=$2)]
-struct $1 {
+pub struct $1 {
     base: Base<$2>,
 }
 
@@ -79,7 +79,7 @@ prefix = "bevy-plugin"
 scope = ["rust"]
 body = '''use bevy::prelude::*;
 
-pub(super) fn plugin(app: &mut App) {
+pub fn plugin(app: &mut App) {
 	$1
 }'''
 description = "Bevy: New top-level function Plugin"
