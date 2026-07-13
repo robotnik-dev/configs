@@ -1,4 +1,12 @@
 [[snippets]]
+prefix = "gd-prelude"
+scope = ["rust"]
+body = '''
+use godot::prelude::*;
+'''
+description = "Godot: bring prelude into scope"
+
+[[snippets]]
 prefix = "gd-class"
 scope = ["rust"]
 body = '''
@@ -60,6 +68,27 @@ fn physics_process(&mut self, delta: f64) {
 }
 '''
 description = "Godot: physics-process function"
+
+[[snippets]]
+prefix = "gd-signal"
+scope = ["rust"]
+body = '''
+#[signal]
+fn $1();
+'''
+description = "Godot: New signal"
+
+[[snippets]]
+prefix = "gd-func"
+scope = ["rust"]
+body = '''
+#[func]
+fn $1(&self) {
+	$2
+}
+'''
+description = "Godot: New signal"
+
 
 [[snippets]]
 prefix = "gd-enum"
