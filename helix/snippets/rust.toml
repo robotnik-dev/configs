@@ -116,7 +116,7 @@ description = "Bevy: New top-level function Plugin"
 [[snippets]]
 prefix = "bevy-component"
 scope = ["rust"]
-body = '''#[derive(Component, Reflect, Debug)]
+body = '''#[derive(Component, Reflect, Debug, Default, Clone)]
 #[reflect(Component)]
 pub struct $1;'''
 description = "Bevy: New Component"
@@ -124,7 +124,7 @@ description = "Bevy: New Component"
 [[snippets]]
 prefix = "bevy-bundle"
 scope = ["rust"]
-body = '''#[derive(Bundle, Reflect, Debug)]
+body = '''#[derive(Bundle, Reflect, Debug, Default, Clone)]
 pub struct $1 {
 	
 }'''
