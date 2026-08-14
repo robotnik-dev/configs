@@ -43,8 +43,8 @@ formatter = { command = "ruff", args = ["format", "-"] }
 [[language]]
 name = "gdscript"
 auto-format = true
-formatter = { command = "gdformat", args = ["-"] }
-language-servers = ["godot", "scls"]
+formatter = { command = "gdscript-formatter" }
+language-servers = [{ name = "godot" }, { name = "scls" }]
 
 [[language]]
 name = "nix"
